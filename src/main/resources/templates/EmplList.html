@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <title>Список сотрудников</title>
+</head>
+<body>
+<div th:each="empl : ${list}">
+
+    <div style="border: 1px dashed #FFFFFF; background-color: #393c5d; padding: 10px">
+        Идентификатор = <span style="color: #FFFFFF" th:text="${empl.id}"></span><br>
+        <b style="color: #FFFFFF" th:text="${empl.surname}"></b>
+        <b style="color: #FFFFFF" th:text="${empl.name}"></b>
+        <b style="color: #FFFFFF" th:text="${empl.secname}"></b>
+        Ссылка на телеграм: <span style="color: #FFFFFF" th:text="${empl.tg}"></span>
+        Дата приема на работу: <span style="color: #FFFFFF" th:text="${empl.startOfWork}"></span>
+        Номер договора: <span style="color: #FFFFFF" th:text="${empl.paperId}"></span>
+        Должность: <span style="color: #FFFFFF" th:text="${empl.role}"></span>
+
+    </div>
+
+</div>
+</body>
+</html>

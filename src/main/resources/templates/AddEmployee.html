@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Добавление сотрудника</title>
+</head>
+<body>
+<form method="post"
+      th:object="${employee}"
+      th:action="@{/employers}"
+      style="border: 1px dashed #FFFFFF; background-color: #0E0F1C; padding: 10px"
+      enctype="multipart/form-data">
+  <br><br>
+  <input type="text" th:field="*{surname}" placeholder="Фамилия"> <br><br>
+  <input type="text" th:field="*{name}" placeholder="Имя"> <br><br>
+  <input type="text" th:field="*{secname}" placeholder="Отчество"> <br><br>
+  <input type="text" th:field="*{tg}" placeholder="Ссылка на телеграм"> <br><br>
+  <input type="text" th:field="*{paperId}" placeholder="Номер договора"> <br><br>
+  <input type="date" th:field="*{startOfWork}" placeholder="Принят на работу"> <br><br>
+  <input type="text" th:field="*{role}" placeholder="Должность"> <br><br>
+
+  <button type="submit">Отправить</button>
+</form>
+</body>
+</html>
