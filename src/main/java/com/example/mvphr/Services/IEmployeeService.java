@@ -1,6 +1,9 @@
 package com.example.mvphr.Services;
 
+import com.example.mvphr.Entities.Candidate;
 import com.example.mvphr.Entities.Employee;
+
+import java.util.List;
 
 public interface IEmployeeService {
 
@@ -11,4 +14,8 @@ public interface IEmployeeService {
                  String tg,
                  String role,
                  String start);
+
+
 }
+
+

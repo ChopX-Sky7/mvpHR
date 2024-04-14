@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org"><head>
+<head>
+    <meta charset="UTF-8">
+    <title>Список кандидатов</title>
+</head>
+<body>
+<div th:each="cand : ${list}">
+
+  <div style="border: 1px dashed #FFFFFF; background-color: #393c5d; padding: 10px">
+    Идентификатор = <span style="color: #FFFFFF" th:text="${cand.id}"></span><br>
+    <b style="color: #FFFFFF" th:text="${cand.surname}"></b>
+    <b style="color: #FFFFFF" th:text="${cand.name}"></b>
+    <b style="color: #FFFFFF" th:text="${cand.secname}"></b>
+    Дата рождения <span style="color: #FFFFFF" th:text="${cand.dob}"></span>
+    Ссылка на гит: <span style="color: #FFFFFF" th:text="${cand.gitUrl}"></span>
+    <a th:href="@{/download/portfolio/{id} (id=${cand.id}) }" download>Скачать портфолио</a>
+    <hr>
+
+    <a th:href="@{/download/resume/{id} (id=${cand.id})}" download>Скачать резюме</a>
+    <hr>
+  </div>
+
+</body>
+</html>

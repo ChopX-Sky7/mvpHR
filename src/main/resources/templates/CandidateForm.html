@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Отклик на вакансию</title>
+</head>
+<body>
+<form method="post"
+      th:object="${candidate}"
+      th:action="@{/response}"
+      enctype="multipart/form-data">
+    <input type="text" placeholder="Фамилия" th:field="*{surname}"><br>
+    <input type="text" placeholder="Имя" th:field="*{name}"><br>
+    <input type="text" placeholder="Отчество" th:field="*{secname}"><br>
+    <input type="date" placeholder="Дата рождения" th:field="*{dob}"><br>
+    <input type="email" placeholder="Электронная почта" th:field="*{email}"><br>
+    <input type="text" placeholder="Ссылка на резюме (hh.ru)" th:field="*{hhUrl}"><br>
+    <input type="text" placeholder="Ссылка на гитхаб/линкедин" th:field="*{gitUrl}">
+    <input type="file" name="file" accept="application/zip"><br>
+    <input type="submit" value="Отправить">
+</form>
+</body>
+</html>
