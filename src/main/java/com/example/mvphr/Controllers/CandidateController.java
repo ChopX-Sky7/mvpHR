@@ -17,7 +17,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 import static com.example.mvphr.SysHelper.Helper.parse;
-
+// обработка анкет кандидатов
 @Controller
 @Slf4j
 @RequestMapping("/response")

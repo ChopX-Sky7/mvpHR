@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 @Service
 @Slf4j
+// инкапсуляция бд леера
 public class EmployeeServiceImpl implements IEmployeeService {
 
     private final EmployeeRepository repo;

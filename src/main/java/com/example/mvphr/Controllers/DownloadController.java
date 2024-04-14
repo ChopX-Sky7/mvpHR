@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
 import java.io.FileInputStream;
-
+//обработчик скачиваний (и в будущем отображения файлов в вьювере)
 @RestController
 @Slf4j
 @RequestMapping("/download")

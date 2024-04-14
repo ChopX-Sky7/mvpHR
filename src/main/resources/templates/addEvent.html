@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить мероприятие</title>
+</head>
+<body>
+<form method="post"
+      th:object="${event}"
+      th:action="@{/events/add}"
+      style="border: 1px dashed #FFFFFF; background-color: #0E0F1C; padding: 10px"
+      enctype="multipart/form-data">
+    <br><br>
+    <input type="datetime-local" th:field="*{evdate}" placeholder="Дата и время"> <br><br>
+    <input type="text" th:field="*{evdesc}" placeholder="Описание"> <br><br>
+    <input type="text" th:field="*{candId}" placeholder="Идентификатор кандидата"> <br><br>
+    <button type="submit">Отправить</button>
+</form>
+
+</body>
+</html>

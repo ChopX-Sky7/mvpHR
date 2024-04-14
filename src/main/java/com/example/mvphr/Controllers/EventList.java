@@ -1,7 +1,8 @@
 package com.example.mvphr.Controllers;
 
-import com.example.mvphr.Entities.Candidate;
-import com.example.mvphr.Services.Impl.CandidateServiceImpl;
+
+import com.example.mvphr.Entities.EventEntity;
+import com.example.mvphr.Services.Impl.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,24 +11,26 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
-// список кандитатов
+// вывод списка мероприятий
 @Controller
-@RequestMapping("/candList")
-public class CandidateList {
-    private final CandidateServiceImpl service;
+@RequestMapping("/eventlist")
+public class EventList {
 
+    private final EventService service;
 
     @Autowired
-    public CandidateList(CandidateServiceImpl service) {
+    public EventList(EventService service) {
         this.service = service;
     }
 
     @ModelAttribute
-    private List<Candidate> getList(){return service.getALl();}
+    private List<EventEntity> getEvents(){return service.getAll();}
+
 
     @GetMapping
     public String showList(Model model){
-        model.addAttribute("list", getList());
-        return "candList";}
+        model.addAttribute("list", getEvents());
+        return "EventList";
+    }
 
 }

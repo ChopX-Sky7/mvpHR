@@ -9,7 +9,7 @@ import lombok.Data;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
+// класс кандидата
 @Entity
 @Data
 public class Candidate {

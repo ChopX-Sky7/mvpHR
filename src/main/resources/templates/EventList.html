@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <title>Список мероприятий</title>
+</head>
+<body>
+<div th:each="ev : ${list}">
+
+  <div style="border: 1px dashed #FFFFFF; background-color: #393c5d; padding: 10px">
+    Название: <b style="color: #FFFFFF" th:text="${ev.name}"></b> <br>
+    Описание: <b style="color: #FFFFFF" th:text="${ev.evdesc}"></b> <br>
+    Дата: <b style="color: #FFFFFF" th:text="${ev.evdate}"></b>
+    Кандидат: <span style="color: #FFFFFF" th:text="${ev.candName}"></span>
+  </div>
+  </div>
+</body>
+</html>

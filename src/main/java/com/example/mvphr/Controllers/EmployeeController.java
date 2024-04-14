@@ -12,7 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
+//Добавление сотрудников
 @Controller
 @RequestMapping("/employers")
 @Slf4j

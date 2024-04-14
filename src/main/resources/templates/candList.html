@@ -14,12 +14,14 @@
     <b style="color: #FFFFFF" th:text="${cand.name}"></b>
     <b style="color: #FFFFFF" th:text="${cand.secname}"></b>
     Дата рождения <span style="color: #FFFFFF" th:text="${cand.dob}"></span>
+    Почта <span style="color: #FFFFFF" th:text="${cand.email}"></span>
     Ссылка на гит: <span style="color: #FFFFFF" th:text="${cand.gitUrl}"></span>
     <a th:href="@{/download/portfolio/{id} (id=${cand.id}) }" download>Скачать портфолио</a>
     <hr>
 
     <a th:href="@{/download/resume/{id} (id=${cand.id})}" download>Скачать резюме</a>
     <hr>
+  </div>
   </div>
 
 </body>
