@@ -1,0 +1,82 @@
+
+.info{
+    font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color:#095974;
+  text-align:left;
+  margin-top: 5%;
+}
+.colortext{
+    color: #5FCBEF;
+
+}
+.trud{
+    font-family: "Alegreya Sans SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #5FCBEF;
+}
+.colortext1{
+    color: #42D0A2;
+}
+.btn {
+    border-radius: 50%;
+    border-color: #42D0A2;
+    background-color: white;
+    color: #42D0A2;
+    border: 0px;
+    margin-left: 3%;
+    
+    
+}
+.btn:hover{
+    color: white;
+    border: none;
+    border-color: white;
+    color: white;
+    
+}
+.knopki{
+    margin-left: 3%;
+}
+.logo{
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:#095974;
+    text-align:left;  
+    margin-top: 5%;
+    margin-left: 5%; 
+
+}
+.fio{
+    text-align: center;
+    color: #095974;
+    font-family: "Alegreya Sans SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 2%;
+    margin-right: 10%;
+}
+.btn-group-vertical{
+    border-radius: 50%;
+    border-color: #42D0A2;
+    background-color: white;
+    color: #42D0A2;
+    border: none;
+    border: 0;
+    
+
+}
+.zag{
+    text-align: center;
+    color: #095974;
+    font-family: "Alegreya Sans SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 2%;
+    margin-right: 9%;
+}
+
+

@@ -1,24 +1,101 @@
 <!DOCTYPE html>
 <html lang="ru"
-      xmlns:th="http://www.thymeleaf.org"><head>
-    <meta charset="UTF-8">
-    <title>Список сотрудников</title>
-</head>
-<body>
-<div th:each="empl : ${list}">
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Audiowide&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container-md">
+            <div class="row">
+                <div class="col-3">
+                    <div class="logo">
+                    <h1 class="display-1"><span class="colortext">I</span>HR</h1>
 
-    <div style="border: 1px dashed #FFFFFF; background-color: #393c5d; padding: 10px">
-        Идентификатор = <span style="color: #FFFFFF" th:text="${empl.id}"></span><br>
-        <b style="color: #FFFFFF" th:text="${empl.surname}"></b>
-        <b style="color: #FFFFFF" th:text="${empl.name}"></b>
-        <b style="color: #FFFFFF" th:text="${empl.secname}"></b>
-        Ссылка на телеграм: <span style="color: #FFFFFF" th:text="${empl.tg}"></span>
-        Дата приема на работу: <span style="color: #FFFFFF" th:text="${empl.startOfWork}"></span>
-        Номер договора: <span style="color: #FFFFFF" th:text="${empl.paperId}"></span>
-        Должность: <span style="color: #FFFFFF" th:text="${empl.role}"></span>
+                </div>
+            </div>
+                <div class="col-9">
+                    <div class="fio">
+                        <div th:each="empl : ${list}">
+                            <div style="border: 1px dashed #FFFFFF; background-color: #393c5d; padding: 10px">
+                                Идентификатор = <span style="color: #FFFFFF" th:text="${empl.id}"></span><br>
+                                <b style="color: #FFFFFF" th:text="${empl.surname}"></b>
+                                <b style="color: #FFFFFF" th:text="${empl.name}"></b>
+                                <b style="color: #FFFFFF" th:text="${empl.secname}"></b>
+                                Ссылка на телеграм: <span style="color: #000000" th:text="${empl.tg}"></span>
+                                Дата приема на работу: <span style="color: #000000" th:text="${empl.startOfWork}"></span>
+                                Номер договора: <span style="color: #000000" th:text="${empl.paperId}"></span>
+                                Должность: <span style="color: #000000" th:text="${empl.role}"></span>
+                            </div>
+                    </div>
 
-    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-md">
+            <div class="row">
+                <div class="col-3">
+                    <div class="btn-group-vertical" th:action="@{/eventlist}" role="group" aria-label="Группа вертикальных кнопок">
+                        <a  class="btn">
+                        <button type="button" th:action class="btn btn-primary">
+                            <svg width="179" height="183" viewBox="0 0 179 183" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 89.2334C0 39.9512 39.9512 0 89.2335 0C138.516 0 178.467 39.9512 178.467 89.2335V93.6858C178.467 142.968 138.516 182.919 89.2335 182.919C39.9512 182.919 0 142.968 0 93.6858V89.2334Z" fill="#26735A"/>
+                            <path d="M134.731 55.308H116.434V42.4845H109.781V55.308H69.8604V42.4845H63.207V55.308H44.9103C43.5873 55.3097 42.319 55.8893 41.3835 56.9196C40.448 57.9499 39.9218 59.3468 39.9202 60.8039V137.745C39.9218 139.202 40.448 140.599 41.3835 141.63C42.319 142.66 43.5873 143.239 44.9103 143.241H134.731C136.054 143.239 137.322 142.66 138.258 141.63C139.193 140.599 139.719 139.202 139.721 137.745V60.8039C139.719 59.3468 139.193 57.9499 138.258 56.9196C137.322 55.8893 136.054 55.3097 134.731 55.308ZM133.067 135.913H46.5736V62.6358H63.207V71.7955H69.8604V62.6358H109.781V71.7955H116.434V62.6358H133.067V135.913Z" fill="white"/>
+                            <path d="M66.5337 84.6191H59.8804V91.9469H66.5337V84.6191Z" fill="white"/>
+                            <path d="M84.8304 84.6191H78.1771V91.9469H84.8304V84.6191Z" fill="white"/>
+                            <path d="M101.464 84.6191H94.8105V91.9469H101.464V84.6191Z" fill="white"/>
+                            <path d="M119.761 84.6191H113.107V91.9469H119.761V84.6191Z" fill="white"/>
+                            <path d="M66.5337 101.107H59.8804V108.434H66.5337V101.107Z" fill="white"/>
+                            <path d="M84.8304 101.107H78.1771V108.434H84.8304V101.107Z" fill="white"/>
+                            <path d="M101.464 101.107H94.8105V108.434H101.464V101.107Z" fill="white"/>
+                            <path d="M119.761 101.107H113.107V108.434H119.761V101.107Z" fill="white"/>
+                            <path d="M66.5337 117.594H59.8804V124.922H66.5337V117.594Z" fill="white"/>
+                            <path d="M84.8304 117.594H78.1771V124.922H84.8304V117.594Z" fill="white"/>
+                            <path d="M101.464 117.594H94.8105V124.922H101.464V117.594Z" fill="white"/>
+                            <path d="M119.761 117.594H113.107V124.922H119.761V117.594Z" fill="white"/>
+                            </svg>
+                            </button></a>
+                            <a  class="btn">
+                        <button type="button" th:action="@{/candList}" class="btn btn-primary">
+                            <svg width="179" height="183" viewBox="0 0 179 183" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 89.2334C0 39.9512 39.9512 0 89.2335 0C138.516 0 178.467 39.9512 178.467 89.2335V93.6858C178.467 142.968 138.516 182.919 89.2335 182.919C39.9512 182.919 0 142.968 0 93.6858V89.2334Z" fill="#26735A"/>
+                            <path d="M63.9897 125.412H82.5017C83.8403 125.41 85.1235 124.886 86.07 123.953C87.0165 123.02 87.5489 121.756 87.5505 120.436V77.314C87.5489 75.9949 87.0165 74.7302 86.07 73.7974C85.1235 72.8646 83.8403 72.3399 82.5017 72.3384H63.9897C62.6512 72.3399 61.3679 72.8646 60.4214 73.7974C59.4749 74.7302 58.9425 75.9949 58.941 77.314V120.436C58.9425 121.756 59.4749 123.02 60.4214 123.953C61.3679 124.886 62.6512 125.41 63.9897 125.412ZM65.6726 78.9726H80.8188V118.778H65.6726V78.9726Z" fill="white"/>
+                            <path d="M124.575 42.4845H106.063C104.724 42.486 103.441 43.0107 102.494 43.9435C101.548 44.8763 101.015 46.141 101.014 47.4601V120.436C101.015 121.756 101.548 123.02 102.494 123.953C103.441 124.886 104.724 125.41 106.063 125.412H124.575C125.913 125.41 127.196 124.886 128.143 123.953C129.089 123.02 129.622 121.756 129.623 120.436V47.4601C129.622 46.141 129.089 44.8763 128.143 43.9435C127.196 43.0107 125.913 42.486 124.575 42.4845ZM122.892 118.778H107.746V49.1187H122.892V118.778Z" fill="white"/>
+                            <path d="M45.4778 42.4845H38.7461V141.998H139.721V135.363H45.4778V42.4845Z" fill="white"/>
+                            </svg>
+                            
+                            </button></a>
+                            <a  class="btn">
+                        <button type="button" href="#" class="btn btn-primary"><svg width="179" height="183" viewBox="0 0 179 183" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 89.2334C0 39.9512 39.9512 0 89.2335 0C138.516 0 178.467 39.9512 178.467 89.2335V93.6858C178.467 142.968 138.516 182.919 89.2335 182.919C39.9512 182.919 0 142.968 0 93.6858V89.2334Z" fill="#26735A"/>
+                            <path d="M60 88.8125H99.875V95.5H60V88.8125ZM60 105.531H107.125V112.219H60V105.531Z" fill="white"/>
+                            <path d="M132.5 55.375H45.5C43.5772 55.375 41.7331 56.0796 40.3735 57.3337C39.0138 58.5879 38.25 60.2889 38.25 62.0625V128.938C38.25 130.711 39.0138 132.412 40.3735 133.666C41.7331 134.92 43.5772 135.625 45.5 135.625H132.5C134.423 135.625 136.267 134.92 137.627 133.666C138.986 132.412 139.75 130.711 139.75 128.938V62.0625C139.75 60.2889 138.986 58.5879 137.627 57.3337C136.267 56.0796 134.423 55.375 132.5 55.375ZM132.5 62.0625V68.75H45.5V62.0625H132.5ZM45.5 128.938V75.4375H132.5V128.938H45.5Z" fill="white"/>
+                            </svg>
+                            
+                            </button>
+                        </a>
+                        <a  class="btn">
+                        <button type="button" href="#" class="btn btn-primary"><svg width="179" height="184" viewBox="0 0 179 184" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0515137 89.7738C0.0515137 40.4915 40.0027 0.540344 89.285 0.540344C138.567 0.540344 178.518 40.4915 178.518 89.7738V94.2262C178.518 143.508 138.567 183.46 89.285 183.46C40.0027 183.46 0.0515137 143.508 0.0515137 94.2262V89.7738Z" fill="#26735A"/>
+                            <path d="M138.864 102.753L123.26 93.5585L129.268 83.6391C130.717 81.1622 131.476 78.4054 131.48 75.6058V59.8809C131.492 55.4594 130.07 51.1309 127.389 47.4271C124.708 43.7232 120.884 40.8051 116.387 39.0312C111.89 37.2573 106.916 36.7048 102.075 37.4415C97.2344 38.1782 92.7379 40.172 89.1378 43.1782L94.4117 48.3056C96.9062 46.2283 100.02 44.8517 103.37 44.3447C106.721 43.8376 110.162 44.222 113.274 45.4509C116.385 46.6797 119.031 48.6996 120.887 51.2627C122.742 53.8259 123.727 56.821 123.72 59.8809V75.6058C123.719 77.236 123.286 78.8424 122.456 80.291L113.018 95.8735L134.615 108.601C136.04 109.441 137.21 110.589 138.018 111.94C138.826 113.291 139.246 114.802 139.24 116.337V128.022H121.78V135.011H147V116.336C147.008 113.641 146.267 110.987 144.847 108.614C143.426 106.242 141.369 104.227 138.864 102.753Z" fill="white"/>
+                            <path d="M103.944 109.742L88.3411 100.547L94.3485 90.6279C95.7975 88.1511 96.5566 85.3943 96.5605 82.5947V66.8697C96.5555 60.8424 93.8961 55.0629 89.1658 50.7992C84.4354 46.5355 78.0203 44.1359 71.328 44.1267C57.4288 44.1267 46.1211 54.3293 46.1211 66.8697V82.5947C46.1063 85.393 46.8571 88.1515 48.3072 90.6264L54.3473 100.6L38.835 109.742C36.3325 111.214 34.2777 113.225 32.8571 115.594C31.4364 117.962 30.695 120.613 30.7 123.305L30.5787 142H112.08V123.325C112.088 120.63 111.348 117.976 109.927 115.603C108.506 113.231 106.449 111.216 103.944 109.742ZM104.32 135.011H38.3838L38.4589 123.325C38.4531 121.791 38.8731 120.279 39.6808 118.928C40.4886 117.577 41.6585 116.43 43.0841 115.589L64.5892 102.916L55.1195 87.2798C54.2985 85.8291 53.8739 84.2229 53.881 82.5947V66.8697C53.881 62.6992 55.7205 58.6995 58.9949 55.7505C62.2692 52.8015 66.7102 51.1448 71.3408 51.1448C75.9715 51.1448 80.4124 52.8015 83.6868 55.7505C86.9611 58.6995 88.8006 62.6992 88.8006 66.8697V82.5947C88.7999 84.2249 88.3663 85.8313 87.536 87.2798L78.099 102.862L99.6953 115.59C101.121 116.43 102.291 117.578 103.098 118.929C103.906 120.28 104.326 121.791 104.32 123.326V135.011Z" fill="white"/>
+                            </svg>
+                            
+                            </button></a>
+                        
+                      </div>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>    
 
-</div>
-</body>
+    </body>
 </html>
