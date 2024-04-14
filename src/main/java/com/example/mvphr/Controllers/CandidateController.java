@@ -16,6 +16,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
+import static com.example.mvphr.SysHelper.Helper.parse;
+
 @Controller
 @Slf4j
 @RequestMapping("/response")
@@ -25,9 +27,11 @@ public class CandidateController {
     private static final String UPLOAD_DIR = "src/main/resources/static/portfolio/";
     private final CandidateServiceImpl service;
 
+
     @Autowired
     public CandidateController(CandidateServiceImpl service) {
         this.service = service;
+
     }
 
     @ModelAttribute
@@ -49,6 +53,7 @@ public class CandidateController {
            service.setInfo(c, c.getSurname(), c.getName(), c.getSecname(),
                    String.valueOf(c.getDob()), c.getEmail(), c.getHhUrl(),c.getGitUrl(), String.valueOf(path));
            c.timeOfCreate();
+           c.setResumeLink(parse(c.getHhUrl()));
            service.save(c);
            log.info("Created candidate: {}", c);
        } catch (IOException e) {
